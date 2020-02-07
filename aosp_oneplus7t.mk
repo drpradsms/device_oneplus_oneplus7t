@@ -27,7 +27,7 @@ VENDOR_EXCEPTION_PATHS := oneplus \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
+#$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -67,10 +67,10 @@ AB_OTA_UPDATER := true
 
 DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus7t/overlay/device
 DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus7pro/overlay/common
-DEVICE_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
+#DEVICE_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # get the rest of aosp stuff after ours
 $(call inherit-product, $(SRC_TARGET_DIR)/product/mainline_system_arm64.mk)
@@ -83,7 +83,7 @@ ALLOW_MISSING_DEPENDENCIES := true
 PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := omni_oneplus7t
+PRODUCT_NAME := aosp_oneplus7t
 PRODUCT_DEVICE := oneplus7t
 PRODUCT_BRAND := OnePlus
 PRODUCT_MANUFACTURER := OnePlus
@@ -101,4 +101,4 @@ PLATFORM_SECURITY_PATCH_OVERRIDE := 2019-10-01
 
 TARGET_VENDOR := oneplus
 
-$(call inherit-product, vendor/oneplus/oneplus7t/oneplus7t-vendor.mk)
+$(call inherit-product, vendor/oneplus/hotdog/hotdog-vendor.mk)
